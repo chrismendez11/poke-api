@@ -1,0 +1,131 @@
+ul {
+    list-style: none;
+}
+
+.red2 {
+    width: 100%;
+    height: 120px;
+    background-color: #DD1A1A;
+}
+
+.black2 {
+    width: 100%;
+    height: 50px;
+    background-color: #0C0C0C;
+}
+
+.img-container-pokedex {
+    position: absolute;
+    width: 430px;
+    height: 75px;
+    left: 130px;
+    top: 55px;
+}
+
+.img-container-pokedex img {
+    width: 100%;
+}
+
+.pokedex-container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 0 40px;
+}
+
+.pokedex-container h2 {
+    font-size: 2.4rem;
+}
+
+.pokedex-container h2 span {
+    color: #FE1936;
+}
+
+.searches-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+@media (min-width: 669px) {
+    .searches-container {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 490px) {
+    .searches-container form input {
+        font-size: 1.8rem;
+    }
+    .searches-container form button {
+        font-size: 1.8rem;
+    }
+}
+
+.searches-container form {
+    display: flex;
+    width: 80%;
+    max-width: 666px;
+    margin: 0 auto;
+}
+
+.searches-container form input {
+    width: 70%;
+    height: 68px;
+    padding: 0 20px;
+    font-size: 2.4rem;
+    border: none;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15);
+
+}
+
+.searches-container form input::placeholder {
+    color: #D3D3D3;
+}
+
+.searches-container form input:focus {
+    outline: none;
+}
+
+.searches-container form button {
+    width: 30%;
+    height: 68px;
+    border: none;
+    background-color: #D93F3F;
+    cursor: pointer;
+    font-size: 2.4rem;
+    color: #FFFFFF;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15);
+}
+
+.searches-container form button:hover {
+    background-color: #DD1A1A;
+}
+
+.dropdown-pokedex {
+    width: 80%;
+    max-width: 470px;
+    height: 68px;
+    margin: 0 auto;
+    padding: 0 10px;
+    border: none;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15);
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #0F0F2D;
+}
+
+.dropdown-pokedex:focus {
+    outline: none;
+}
+
+.pokemons-container {
+    margin-top: 80px;
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 70px 30px;
+}
