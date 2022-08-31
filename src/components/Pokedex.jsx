@@ -13,6 +13,50 @@ const Pokedex = () => {
   const [listTypes, setListTypes] = useState()
   const [optionType, setOptionType] = useState()
 
+  // Pagination 
+  const [currentPage, setCurrentPage] = useState(1)
+  const [postPerPage, setPostPerPage] = useState(16)
+
+  // Get current posts
+  const indexOfLastPost = currentPage * postPerPage;
+  const indexOfFirstPost = indexOfLastPost - postPerPage;
+  const currentPosts = pokemons?.slice(indexOfFirstPost, indexOfLastPost);
+
+  // Calculate numberPages 
+  let btns = []
+  for(let i = 1; i <= Math.ceil(pokemons?.length / postPerPage); i++){
+    btns.push(i)
+  }
+
+  // Change currentPage
+  const handleCurrentPage = (e) => {
+      const lastBtn = document.getElementById(+currentPage);
+      lastBtn.style.background = null;
+      lastBtn.style.color = null;
+      const currentbBtn = document.getElementById(e.target.textContent);
+      currentbBtn.style.background = '#DD1A1A';
+      currentbBtn.style.color = '#FFFFFF';
+      setCurrentPage(+e.target.textContent)
+  }
+
+  // Change nextPage 
+  const handleNextPage = () => {
+    if (+currentPage < btns.length) {
+      setCurrentPage(+currentPage + 1)
+      const currentbBtn = document.getElementById(+currentPage + 1);
+      const lastBtn = document.getElementById(+currentPage);
+      currentbBtn.style.background = '#DD1A1A';
+      currentbBtn.style.color = '#FFFFFF';
+      lastBtn.style.background = null;
+      lastBtn.style.color = null;
+    } 
+  }
+
+  // Change BGCOLOR
+  let bgColor = {
+    background: '#DD1A1A'
+  }
+
   useEffect(() => {
     let URL;
     if (pokeSearch) {
@@ -23,10 +67,15 @@ const Pokedex = () => {
     } else {
       URL = 'https://pokeapi.co/api/v2/pokemon?limit=100&offset=0';
       axios.get(URL)
-      .then(res => setPokemons(res.data.results))
+      .then(res => {
+        setPokemons(res.data.results)
+        // Adding bgcolor to btn no.1 at the start of the reder
+        const pageOne = document.getElementById('1')
+        pageOne.style.background = '#DD1A1A';
+        pageOne.style.color = '#FFFFFF';
+      })
       .catch(err => console.log(err))
     }
-
   }, [pokeSearch])
 
   useEffect(() => {
@@ -71,9 +120,11 @@ const Pokedex = () => {
         <div className='red2'></div>
         <div className='black2'></div>
         <div className='img-container-pokedex'><img src={header_img} alt="" /></div>
+        <div className='circle-poke'></div>
+        <div className='circle2-poke'></div>
       </header>
       <section className='pokedex-container'>
-        <h2><span>Welcome {name},</span> here you can find your favorite pokemon</h2>
+        <h2><span>Welcome {name},</span> here you can find your favorite pokemons</h2>
         <div className='searches-container'>
           <form onSubmit={handleSubmit} action="">
             <input id='searchPokemon' type="text" placeholder='Search a pokemon...'/>
@@ -90,11 +141,17 @@ const Pokedex = () => {
         </div>
         <div className='pokemons-container'>
           {
-            pokemons?.map(pokemon => (
+            currentPosts?.map(pokemon => (
               <PokemonCard key={pokemon.url} url={pokemon.url} />
             ))
             
           }
+        </div>
+        <div className='pagination-btns'>
+          {btns.map(btn => (
+            <button onClick={handleCurrentPage} id={btn} className='btn-pagination'>{btn}</button>
+          ))}
+          <button onClick={handleNextPage} className='btn-pagination-next'>>></button>
         </div>
       </section>
 

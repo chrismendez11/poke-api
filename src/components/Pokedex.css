@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
+html {
+    font-family: 'Inconsolata', monospace;
+}
 ul {
     list-style: none;
 }
@@ -36,10 +41,13 @@ ul {
 
 .pokedex-container h2 {
     font-size: 2.4rem;
+    margin-left: 10px;
+    font-weight: 400;
 }
 
 .pokedex-container h2 span {
     color: #FE1936;
+    font-weight: 600;
 }
 
 .searches-container {
@@ -128,4 +136,61 @@ ul {
     justify-content: center;
     flex-wrap: wrap;
     gap: 70px 30px;
+}
+
+.pagination-btns {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 150px;
+    margin-bottom: 75px;
+}
+
+.btn-pagination {
+    width: 75px;
+    height: 75px;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    border: none;
+    color: #212121;
+    font-size: 3.2rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.btn-pagination:hover {
+    background-color: rgba(211, 211, 211, 0.5);
+}
+
+.btn-pagination-next {
+    width: 75px;
+    height: 75px;
+    border-radius: 6px;
+    background-color: #DD1A1A;
+    border: none;
+    color: #FFFFFF;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.circle-poke {
+    position: absolute;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    top: 85px;
+    right: 295px;
+    border: 15px solid #0C0C0C;
+}
+
+.circle2-poke {
+    position: absolute;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    top: 115px;
+    right: 325px;
+    border: 3px solid #0C0C0C;
 }

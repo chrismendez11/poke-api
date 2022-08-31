@@ -12,6 +12,8 @@ const colors = {
     fighting: ['#96402A','#F1613C','#CB735D', '#a9462d'],
     rock: ['#7E7E7E','#8D8D94','#D3D3D3', '#8b8b8b'],
     ghost: ['#323569','#454AA8','#787DDA', '#3c4083'],
+    ice: ['#6FBEDF','#64CBF5','#BDEBFE','#83c8e6'],
+    dark: ['#030706','#0D1211','#5A5E5D','#1a1c1c']
 }
 
 export default colors;

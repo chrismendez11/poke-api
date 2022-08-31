@@ -37,12 +37,14 @@ const PokemonDetails = () => {
         <div className='red2'></div>
         <div className='black2'></div>
         <div className='img-container-pokedex'><img src={header_img} alt="" /></div>
+        <div className='circle-poke'></div>
+        <div className='circle2-poke'></div>
       </header>
       <section className='details-container'>
         <header className='details-header' style={bgColor}><img src={pokeInfo?.sprites.other['official-artwork'].front_default} alt="" /></header>
         <div className='details-info'>
           <div><h2 id='det-number'>#{pokeInfo?.id}</h2></div>
-          <div className='name-container'><div className='name-line'></div><h2>{name}</h2><div className='name-line'></div></div>
+          <div className='name-container'><div className='name-line'></div><h2>{name[0].toUpperCase() + name.slice(1)}</h2><div className='name-line'></div></div>
           <div className='weight-height-container'>
             <div>
               <span>Weight</span>
@@ -57,15 +59,15 @@ const PokemonDetails = () => {
             <div className='type-skills'>
               <h3>Type</h3>
               <div className='type-text'>
-                <p id='blue-div'>{pokeInfo?.types[0].type.name}</p>
-                <p id='purple-div'>{pokeInfo?.types[1] && pokeInfo?.types[1].type.name}</p>
+                <p id='blue-div'>{pokeInfo?.types[0].type.name[0].toUpperCase() + pokeInfo?.types[0].type.name.slice(1)}</p>
+                <p id='purple-div'>{pokeInfo?.types[1] && pokeInfo?.types[1].type.name[0].toUpperCase() + pokeInfo?.types[1].type.name.slice(1)}</p>
               </div>
             </div>
             <div className='type-skills'>
               <h3>Skills</h3>
               <div className='type-text'>
-                <p className='border-div'>{pokeInfo?.abilities[0].ability.name}</p>
-                <p className='border-div'>{pokeInfo?.abilities[1] && pokeInfo?.abilities[1].ability.name}</p>
+                <p className='border-div'>{pokeInfo?.abilities[0].ability.name[0].toUpperCase() + pokeInfo?.abilities[0].ability.name.slice(1)}</p>
+                <p className='border-div'>{pokeInfo?.abilities[1] && pokeInfo?.abilities[1].ability.name[0].toUpperCase() + pokeInfo?.abilities[1].ability.name.slice(1)}</p>
               </div>
             </div>
           </div>
