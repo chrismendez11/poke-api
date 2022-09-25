@@ -21,14 +21,24 @@ ul {
 
 .img-container-pokedex {
     position: absolute;
-    width: 430px;
+    width: 290px;
     height: 75px;
-    left: 130px;
-    top: 55px;
+    left: 30px;
+    top: 85px;
 }
 
 .img-container-pokedex img {
     width: 100%;
+}
+
+@media (min-width: 560px) {
+    .img-container-pokedex {
+        position: absolute;
+        width: 430px;
+        height: 75px;
+        left: 130px;
+        top: 55px;
+    }
 }
 
 .pokedex-container {
@@ -77,18 +87,24 @@ ul {
     width: 80%;
     max-width: 666px;
     margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .searches-container form input {
-    width: 70%;
+    width: 100%;
     height: 68px;
     padding: 0 20px;
-    font-size: 2.4rem;
+    font-size: 1.8rem;
     border: none;
     box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15);
-
 }
 
+@media (min-width: 425px) {
+    .searches-container form input {
+        font-size: 2.4rem;
+    }   
+}
 .searches-container form input::placeholder {
     color: #D3D3D3;
 }
@@ -98,7 +114,7 @@ ul {
 }
 
 .searches-container form button {
-    width: 30%;
+    width: 100%;
     height: 68px;
     border: none;
     background-color: #D93F3F;
@@ -144,26 +160,28 @@ ul {
     gap: 25px;
     margin-top: 150px;
     margin-bottom: 75px;
+    flex-wrap: wrap;
 }
 
 .btn-pagination {
-    width: 75px;
+    width: 50px;
     height: 75px;
     border-radius: 6px;
-    background-color: #FFFFFF;
+    background-color: rgba(211, 211, 211, 0.5);
     border: none;
     color: #212121;
-    font-size: 3.2rem;
+    font-size: 2.4rem;
     font-weight: 400;
     cursor: pointer;
 }
 
 .btn-pagination:hover {
-    background-color: rgba(211, 211, 211, 0.5);
+    color: #FFFF;
+    background-color: #DD1A1A;
 }
 
 .btn-pagination-next {
-    width: 75px;
+    width: 50px;
     height: 75px;
     border-radius: 6px;
     background-color: #DD1A1A;
@@ -173,24 +191,53 @@ ul {
     cursor: pointer;
 }
 
+@media (min-width: 425px) {
+    .btn-pagination {
+        width: 75px;
+        font-size: 3.2rem;
+    }
+    .btn-pagination-next {
+        width: 75px;
+    }
+}
+
 .circle-poke {
-    position: absolute;
-    background-color: #FFFFFF;
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    top: 85px;
-    right: 295px;
-    border: 15px solid #0C0C0C;
+    display: none;
 }
 
 .circle2-poke {
-    position: absolute;
-    background-color: #FFFFFF;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    top: 115px;
-    right: 325px;
-    border: 3px solid #0C0C0C;
+    display: none;
 }
+
+@media (min-width: 990px) {
+    .circle-poke {
+        display: block;
+        position: absolute;
+        background-color: #FFFFFF;
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        top: 85px;
+        right: 295px;
+        border: 15px solid #0C0C0C;
+    }
+    .circle2-poke {
+        display: block;
+        position: absolute;
+        background-color: #FFFFFF;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        top: 115px;
+        right: 325px;
+        border: 3px solid #0C0C0C;
+    }    
+}
+
+/* Mediaquery for input and button */
+@media (min-width: 670px) {
+    .searches-container form {
+        flex-wrap: nowrap;
+        gap: 0;
+    }
+} 

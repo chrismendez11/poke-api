@@ -1,5 +1,6 @@
 .pokemon {
     width: 261px;
+    min-width: 261px;
     height: 383px;
     background-color: #FFFFFF;
     border-radius: 4px;

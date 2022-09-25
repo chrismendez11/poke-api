@@ -49,10 +49,13 @@ html {
     margin-top: 40px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 20px;
 }
 
 .name-form input {
-    width: 452px;
+    width: 100%;
+    max-width: 425px;
     height: 68px;
     font-size: 2.4rem;
     padding: 0 20px;
@@ -69,7 +72,8 @@ html {
 }
 
 .name-form button {
-    width: 210px;
+    width: 100%;
+    max-width: 425px;
     height: 68px;
     font-size: 2.4rem;
     background-color: #D93F3F;
@@ -134,3 +138,22 @@ html {
     margin: auto;
     border: 3px solid #0C0C0C;
 }
+
+@media (max-width: 890px) {
+    .name-form {
+        gap: 20px;
+    }
+}
+
+@media (min-width: 890px) {
+    .name-form {
+        gap: 0px;
+    }
+    .name-form input {
+        max-width: 425px;
+    }
+    .name-form button {
+        max-width: 210px;
+    }
+}
+
